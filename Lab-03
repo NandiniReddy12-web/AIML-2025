@@ -1,0 +1,413 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMsl2yK9VC5bfvD8CHNLYs1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/NandiniReddy12-web/AIML-2025/blob/main/Lab-03\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "We_R0Hw5rwIn"
+      },
+      "outputs": [],
+      "source": [
+        "from collections import namedtuple, Counter, defaultdict\n",
+        "import random\n",
+        "import math\n",
+        "import functools\n",
+        "cache = functools.lru_cache(10**6)\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "P-XAjPF9xe3g"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def actions(self,state):\n",
+        "  \"\"\"Return collecton of the allowble moves from this state.\"\"\"\n",
+        "  raise NotImpletentedError\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "S_XmcTO9tn4d"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def result(self,state,move):\n",
+        "  \"\"\"Return the state that results from making a move from a state.\"\"\"\n",
+        "  raise NotIntemplatedError"
+      ],
+      "metadata": {
+        "id": "SAZDs8ZNuE8X"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_termial(self,state):\n",
+        "  \"\"\"Return True if this a final state for the game.\"\"\"\n",
+        "  return not self.cations(state)"
+      ],
+      "metadata": {
+        "id": "F4dg4pIzuloT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def utility(self,stte,player):\n",
+        "  \"\"\"Return the value of this final state palyer.\"\"\"\n",
+        "  raise NotIntemplatederror\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "QVB1RECyvLP-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def play_game(game,strategies:dict, verbose=False):\n",
+        "  state = game.initial\n",
+        "  while not game.is_terminal(state):\n",
+        "    palyer=state.to_move\n",
+        "    move=stategies[palyer](game,state)\n",
+        "    state=game.result(state,move)\n",
+        "    if verbose:\n",
+        "      print('player',player,'move:',move)\n",
+        "      print(state)\n",
+        "      return state"
+      ],
+      "metadata": {
+        "id": "2N9ClKGBvkLT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def minimax_search(game,state):\n",
+        "  player=state.to_move\n",
+        "\n",
+        "  def max_value(state):\n",
+        "    if game.is_terinal(state):\n",
+        "      return game.utility(state,player),None\n",
+        "      v,move=-infinity, None\n",
+        "      for a in game.actions(state):\n",
+        "        v2, _ = min_value(game.result(state, a))\n",
+        "        if v2 > v:\n",
+        "          v, move = v2, a\n",
+        "          return v, move"
+      ],
+      "metadata": {
+        "id": "kNxqxX-NxigQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def min_value(state):\n",
+        "  if game.is_terminal(state):\n",
+        "    return game.utility(state,player), None\n",
+        "    v, move = +infinity, None\n",
+        "    for a in game.actions(state):\n",
+        "      v2, _ = max_value(game.result(state, a))\n",
+        "      if v2 < v:\n",
+        "        v, move = v2, a\n",
+        "        return v,move\n",
+        "\n",
+        "        return max_value(state)\n",
+        "\n",
+        "        infinity = math.inf"
+      ],
+      "metadata": {
+        "id": "3hk7wxQTy6Ib"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def alphabeta_search(game,state):\n",
+        "  \"\"\"Search game to determine best action; use alpha beta pruning.\n",
+        "  \"\"Search all the way to the leaves.\"\"\"\n",
+        "  player = state.to_move\n",
+        "\n",
+        "  def max_value(state, alpha, beta):\n",
+        "    if game.is_terminal(state):\n",
+        "      return game.utility(state, player), None\n",
+        "      v ,move = infinity, None\n",
+        "      for a in game.actions(state):\n",
+        "        v2, _ = min_value(game.result(state, a) , alpha, beta)\n",
+        "        if v2 > v:\n",
+        "          v, move = v2, a\n",
+        "          alpha = max(alpha , v)\n",
+        "          if v>= beta:\n",
+        "            return v, move\n",
+        "            return v,move\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "nc9pnMGP0Q0r"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def min_value(state, alpha, beta):\n",
+        "  if game.is_terminal(state):\n",
+        "    return game.utility(state, player) , None\n",
+        "    v, move = +infinity, None\n",
+        "    for a in game.actins(state):\n",
+        "      v2, _ =max_value(game.result(state, a ),alpha, beta)\n",
+        "      if v2 < v:\n",
+        "        v, move = v2, a\n",
+        "        beta =min(beta, v)\n",
+        "        if v <=alpha:\n",
+        "          return v, move\n",
+        "          return v, move\n",
+        "\n",
+        "          return max_value(state, infnity, infinity)\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "umbeKluO3meq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "  def  __init__(self,height=3, width=3, k=3) :\n",
+        "    self.k = k # K in a row\n",
+        "    self.squares = {(X,Y) for x in range(width) for y in range (height)}\n",
+        "    self.initial = Board(height=height, width=width, to_move='X', utility=0)\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "SGbX-CNf5YvC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def actions(self, board):\n",
+        "  \"\"\"Legal moves are any square not yet taken.\"\"\"\n",
+        "  return self.squares"
+      ],
+      "metadata": {
+        "id": "oBmDFNHMa6M5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def result(self, board, square):\n",
+        "  \"\"\"Place a marker for current player on square.\"\"\"\n",
+        "  player = board.to_move\n",
+        "  board = board.new({square:player},to_move=('0' if player == 'X' else 'X'))\n",
+        "  win = k_in_row(board,player,square,self.k)\n",
+        "  board.utility =(0 if not win else +1 if player == 'X' else -1)\n",
+        "  return board"
+      ],
+      "metadata": {
+        "id": "Ki35beHFboIf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def utility (self,board,player):\n",
+        "  \"\"\"Return the value to the player; 1 for win, 1 for loss, 0 otherwise.\"\"\"\n",
+        "  return board.utility if player == 'X' else board.utility\n"
+      ],
+      "metadata": {
+        "id": "JCDx5--Zc7-m"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_terminal(self, board):\n",
+        "  \"\"\"A board is a terminal state if it is won or there are no empty squares.\"\"\"\n",
+        "  return board.utility !=0 or len(self.squares) ==len(board)\n"
+      ],
+      "metadata": {
+        "id": "oXvw5W3HdrAt"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def display(self, board): print(board)"
+      ],
+      "metadata": {
+        "id": "q1k99rCZeUAl"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def k_in_row(board, player, square, k):\n",
+        "  \"\"\"True if player has K pieces in a line through a square.\"\"\"\n",
+        "  def in_row(x, y, dx, dy):\n",
+        "    return 0 if board[x, y] !=player else 1 + in_row(x + dx,y + dy, dx, day)\n",
+        "    return any (in_riw(*Square, dx, dy) + in_row(*square, -dx, -dy)-1>=k\n",
+        "                for(dx,dy) in ((0,1) ,(1,0) , (1,1) , (1, -1)))\n"
+      ],
+      "metadata": {
+        "id": "aoTNzFAV-ik6"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def __init__(self, width=8, height=8, to_move=None, **kwds):\n",
+        "   self.__dict__.update(width=width, height=height, to_move=to_move, **kwds)\n"
+      ],
+      "metadata": {
+        "id": "-hpPGvAFAfe1"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def new(self, changes: dict, **kwds) ->'Board':\n",
+        "  \"Given a dict of {(x,y): contents} changes, return a new board with the changes.\"\n",
+        "  board = Board(width=self.width, height=self.height, **kwds)\n",
+        "  board.update(self)\n",
+        "  board.update(changes)\n",
+        "  return board"
+      ],
+      "metadata": {
+        "id": "tan5E_SeeeAI"
+      },
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def __missing__(self, loc):\n",
+        "  x ,y = loc\n",
+        "  if 0 <=x < self.width and 0 <=y < self.height:\n",
+        "    return self.empty\n",
+        "  else :\n",
+        "      return self.off"
+      ],
+      "metadata": {
+        "id": "g035QgAUDQiM"
+      },
+      "execution_count": 13,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def __hash__(self):\n",
+        "  return hash(tuple(sorted(self.items()))) + hash(self.to_move)\n",
+        "\n",
+        "  def __repr__(self):\n",
+        "    def row(y) : return ' '.jion(self[x,y] for x in range(self.width))\n",
+        "    return '\\n' .jion(map(row, range(self.height))) + '\\n'\n"
+      ],
+      "metadata": {
+        "id": "3diMkkR0EWjg"
+      },
+      "execution_count": 16,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "PUFKXZBnanc3"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
