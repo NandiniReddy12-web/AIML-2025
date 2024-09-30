@@ -4,3 +4,4 @@
 # [lab-03](https://colab.research.google.com/drive/18uQDba67ABkTzORZg2oqNW53sNrLZIum#scrollTo=3diMkkR0EWjg):Implement the AI Game Strategy
 # [lab-04](https://colab.research.google.com/drive/1nlcynrHOEdBgNwgl52LqLs1zzLQpmr1H#scrollTo=-KACr0G0yu_s):Linear Regression on california Housing Price
 # [lab-05]():Implement Logistic Regression Model Using Titanic Ship dataset
+#[lab-06](https://colab.research.google.com/drive/1XExUXtM7BwNya_qguo7zFaUeE0Dj5acf#scrollTo=eOJjwDbM8eHp):K-Nearest Neighbour Classification
