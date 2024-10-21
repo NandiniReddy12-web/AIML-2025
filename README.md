@@ -4,5 +4,6 @@
 # [lab-03](https://colab.research.google.com/drive/18uQDba67ABkTzORZg2oqNW53sNrLZIum#scrollTo=3diMkkR0EWjg):Implement the AI Game Strategy
 # [lab-04](https://colab.research.google.com/drive/1nlcynrHOEdBgNwgl52LqLs1zzLQpmr1H#scrollTo=-KACr0G0yu_s):Linear Regression on california Housing Price
 # [lab-05](https://colab.research.google.com/drive/1HzmyFaRnJ_Zn7oG7whsUnef6uqgR3pwh#scrollTo=qo0dYo1LG2pd):Implement Logistic Regression Model Using Titanic Ship dataset
-#[lab-06](https://colab.research.google.com/drive/1XExUXtM7BwNya_qguo7zFaUeE0Dj5acf#scrollTo=eOJjwDbM8eHp):K-Nearest Neighbour Classification using classified Manufacturing Dataset
-#[lab-07](https://colab.research.google.com/drive/1TlzLRHEx9miyakcFv4I3qsEYJUuPc_Vf#scrollTo=Kv8bIxArJWxh):Implement support vector machine using Breast Cancer Data
+# [lab-06](https://colab.research.google.com/drive/1XExUXtM7BwNya_qguo7zFaUeE0Dj5acf#scrollTo=eOJjwDbM8eHp):K-Nearest Neighbour Classification using classified Manufacturing Dataset
+# [lab-07](https://colab.research.google.com/drive/1TlzLRHEx9miyakcFv4I3qsEYJUuPc_Vf#scrollTo=Kv8bIxArJWxh):Implement support vector machine using Breast Cancer Data
+# [lab-08]():
